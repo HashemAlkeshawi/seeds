@@ -1,0 +1,13 @@
+{
+    "categoris" : "Categories",
+    "popularDished" : "Popular dishes",
+    "reserveTable" : "Reserve A Table",
+    "profile" : "Profile",
+    "name" : "Name",
+    "phone" : "Phone",
+    "ActivationLabel": "Account Activatoin Status",
+    "active": "Active",
+    "inactive" : "Inactive",
+    "activate" :"Activate Account",
+    "Login": "Log in"
+}

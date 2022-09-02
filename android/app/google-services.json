@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "268003243929",
+    "project_id": "seedsrestaurant-330fd",
+    "storage_bucket": "seedsrestaurant-330fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268003243929:android:8aae3b45cba47d88924508",
+        "android_client_info": {
+          "package_name": "com.example.seeds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268003243929-181e9n0fjnhurl0mir3mjffbo1rmvros.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn2MheEhcDQkMa0w6DEz2Ifs88dqAukFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268003243929-181e9n0fjnhurl0mir3mjffbo1rmvros.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "268003243929-inuofveijj3kjaf8ag5mudqm5llqj1p2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.seedsAdmin"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268003243929:android:a879492263491431924508",
+        "android_client_info": {
+          "package_name": "com.example.seeds_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268003243929-181e9n0fjnhurl0mir3mjffbo1rmvros.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn2MheEhcDQkMa0w6DEz2Ifs88dqAukFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268003243929-181e9n0fjnhurl0mir3mjffbo1rmvros.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "268003243929-inuofveijj3kjaf8ag5mudqm5llqj1p2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.seedsAdmin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
