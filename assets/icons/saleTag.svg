@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="23" viewBox="0 0 64 23">
-  <g id="Group_583" data-name="Group 583" transform="translate(-230 -556)">
-    <g id="Rectangle_240" data-name="Rectangle 240" transform="translate(230 556)" fill="gold" stroke="gold" stroke-width="1">
-      <path d="M10,0H47a2,2,0,0,1,2,2V21a2,2,0,0,1-2,2H10A10,10,0,0,1,0,13V10A10,10,0,0,1,10,0Z" stroke="none"/>
-      <path d="M10,.5H47A1.5,1.5,0,0,1,48.5,2V21A1.5,1.5,0,0,1,47,22.5H10A9.5,9.5,0,0,1,.5,13V10A9.5,9.5,0,0,1,10,.5Z" fill="none"/>
-    </g>
-    <path id="Polygon_1" data-name="Polygon 1" d="M10.672,1.224a1,1,0,0,1,1.657,0L21.944,15.44A1,1,0,0,1,21.116,17H1.884a1,1,0,0,1-.828-1.56Z" transform="translate(294 556) rotate(90)" fill="gold"/>
-    <circle id="Ellipse_34" data-name="Ellipse 34" cx="4.5" cy="4.5" r="4.5" transform="translate(234 563)" fill="#222"/>
+<svg id="sateTag.svg" xmlns="http://www.w3.org/2000/svg" width="64" height="23" viewBox="0 0 64 23">
+  <g id="Rectangle_240" data-name="Rectangle 240" fill="#a77e50" stroke="#a77e50" stroke-width="1">
+    <path d="M10,0H47a2,2,0,0,1,2,2V21a2,2,0,0,1-2,2H10A10,10,0,0,1,0,13V10A10,10,0,0,1,10,0Z" stroke="none"/>
+    <path d="M10,.5H47A1.5,1.5,0,0,1,48.5,2V21A1.5,1.5,0,0,1,47,22.5H10A9.5,9.5,0,0,1,.5,13V10A9.5,9.5,0,0,1,10,.5Z" fill="none"/>
   </g>
+  <path id="Polygon_1" data-name="Polygon 1" d="M10.672,1.224a1,1,0,0,1,1.657,0L21.944,15.44A1,1,0,0,1,21.116,17H1.884a1,1,0,0,1-.828-1.56Z" transform="translate(64) rotate(90)" fill="#a77e50"/>
+  <circle id="Ellipse_34" data-name="Ellipse 34" cx="4.5" cy="4.5" r="4.5" transform="translate(4 7)" fill="#222"/>
 </svg>

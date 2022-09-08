@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -5,13 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:seeds/app_router.dart';
 import 'package:seeds/data/Seeds_api/seed_provider.dart';
-import 'package:seeds/data/firebase/firebase_provider.dart';
 import 'package:seeds/firebase_options.dart';
-import 'package:seeds/screens/auth/login.dart';
 import 'package:seeds/screens/home.dart';
 import 'package:seeds/seedsColors.dart';
 
 void main() async {
+  HttpOverrides.global = MyHttpOverrides();
+
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp(
@@ -38,15 +40,8 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return MultiProvider(
-            providers: [
-              ChangeNotifierProvider(
-                create: (context) => SeedsProvider(),
-              ),
-              ChangeNotifierProvider(
-                create: (context) => FirebaseProvider(),
-              ),
-            ],
+          return ChangeNotifierProvider(
+            create: (context) => SeedsProvider(),
             child: MaterialApp(
               localizationsDelegates: context.localizationDelegates,
               supportedLocales: context.supportedLocales,
@@ -57,9 +52,18 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 primaryColor: SeedsColors.secondColor,
               ),
-              home: LogIn(), //Home(),
+              home: Home(),
             ),
           );
         });
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }

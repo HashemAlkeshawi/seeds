@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:seeds/modules/category.dart';
 import 'package:seeds/modules/meal.dart';
 import 'package:seeds/seedsColors.dart';
 
@@ -16,15 +15,23 @@ popularMealWidget(Meal meal) {
         height: 145.h,
         decoration: BoxDecoration(
           color: SeedsColors.thirdColor,
-          borderRadius: BorderRadius.circular(32.w),
+          borderRadius: BorderRadius.circular(20.w),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 72.h,
-              child: Image.asset(
-                meal.imagePath!,
+              height: 80.h,
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 0.h, horizontal: 6.r),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.r),
+                  child: Image.network(
+                    meal.imagePath!,
+                    height: 200.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
             Text(
@@ -46,10 +53,10 @@ popularMealWidget(Meal meal) {
       ),
       meal.hasSale
           ? Padding(
-              padding: EdgeInsets.only(top: 10.h),
+              padding: EdgeInsets.only(top: 6.h),
               child: SizedBox(
                 height: 10.h,
-                width: 130.w,
+                width: 145.w,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -71,16 +78,23 @@ mealWidget(Meal meal) {
         height: 190.h,
         decoration: BoxDecoration(
           color: SeedsColors.thirdColor,
-          borderRadius: BorderRadius.circular(32.w),
+          borderRadius: BorderRadius.circular(20.w),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              width: 110.w,
               height: 110.h,
-              child: Image.asset(
-                meal.imagePath!,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.r),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.r),
+                  child: Image.network(
+                    meal.imagePath!,
+                    height: 200.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
             Text(

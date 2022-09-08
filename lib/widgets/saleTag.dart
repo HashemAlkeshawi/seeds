@@ -8,7 +8,7 @@ saleTag(int price) {
     children: [
       SvgPicture.asset('assets/icons/saleTag.svg'),
       Padding(
-        padding: EdgeInsets.only(left: 20.w, top: 3.h),
+        padding: EdgeInsets.only(left: 20.w, top: 6.h),
         child: Text(
           price.toString(),
           style: TextStyle(fontSize: 13.sp),
@@ -27,8 +27,11 @@ priceTag(int price) {
           ' ${price.toString()} ',
           style: TextStyle(fontSize: 13, color: SeedsColors.main),
         ),
-        SvgPicture.asset(
-          'assets/icons/shaikel.svg',
+        Padding(
+          padding: EdgeInsets.only(left: 6.w),
+          child: SvgPicture.asset(
+            'assets/icons/shaikel.svg',
+          ),
         ),
       ],
     ),

@@ -1,9 +1,9 @@
 import 'dart:developer';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:seeds/seedsColors.dart';
 import 'package:seeds/widgets/saleTag.dart';
 
@@ -24,22 +24,16 @@ mealInfo(Meal meal) {
       physics: const BouncingScrollPhysics(),
       children: [
         SizedBox(
-          height: 180.h,
-          width: 340.w,
-          child: Image.asset(
-            meal.imagePath!,
-          ),
-        ),
-        Align(
-          alignment: Alignment.bottomRight,
-          child: InkWell(
-            onTap: () {
-              log('nothign');
-            },
-            child: SizedBox(
-              child: SvgPicture.asset(
-                'assets/icons/favorated.svg',
-                width: 90.w,
+          height: 275.h,
+          width: 270.w,
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 12.r, horizontal: 18.r),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50.r),
+              child: Image.network(
+                meal.imagePath!,
+                height: 200.0,
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -64,21 +58,45 @@ mealInfo(Meal meal) {
           ),
           subtitle: RatingBar.builder(
             itemPadding: EdgeInsets.symmetric(horizontal: 1.w),
-            itemSize: 22.r,
+            itemSize: 18.r,
             initialRating: meal.rating ?? 2,
             allowHalfRating: true,
             itemBuilder: ((context, index) =>
-                Icon(Icons.star, color: SeedsColors.main)),
+                Icon(Icons.star, color: SeedsColors.secondMain)),
             onRatingUpdate: (rating) {
               log(rating.toString());
             },
           ),
         ),
+        meal.hasSale
+            ? Padding(
+                padding: EdgeInsets.only(left: 12.w, bottom: 12.h),
+                child: Row(
+                  children: [
+                    Text(
+                      'saleDays'.tr(),
+                      style: TextStyle(
+                          color: SeedsColors.goldenTextColor, fontSize: 14.sp),
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                    Text(
+                      (meal.saleDays ?? "-${'noSale'.tr()}-").substring(1,
+                          (meal.saleDays ?? "-${'noSale'.tr()}-").length - 1),
+                      style: TextStyle(
+                          color: SeedsColors.offWhite, fontSize: 14.sp),
+                    )
+                  ],
+                ),
+              )
+            : const SizedBox(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 12.w),
           child: Text(
             meal.descreption ?? 'The meal: ${meal.title}',
-            style: TextStyle(fontSize: 14.sp, color: SeedsColors.freeStar),
+            style: TextStyle(
+                fontSize: 14.sp, color: SeedsColors.freeStar.withAlpha(180)),
           ),
         ),
       ],
